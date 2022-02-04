@@ -30,7 +30,7 @@ python src/app.py
 python src/vital_simulator.py
 ```
 
-### Acess Data
+### Access Data
 * To acess data use below GET API.
 * Here minutes are in 15 mins slot basis. So, while adding minutes please make sure it falls in this pattern 15, 30, 35, 60 and so on.....
 > http://localhost:3000/vitals_output?user_id=Joe&minutes=30
