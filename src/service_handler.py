@@ -68,9 +68,8 @@ def getFinalAggregatedData(user_id, row_aggregation_count):
             intermediate_aggregated_data[AggregatedVitalInfo.AVG_RESPIRATION_RATE] //= row_aggregation_count
             final_aggregated_data.append(dict(intermediate_aggregated_data))
             intermediate_aggregated_data = getAggregatedDataDictTemplate()
-
         # prevent data loss for remaining rows which doesn't fall under row_aggregation_count
-        if row_number == len(filtered_df):
+        elif row_number == len(filtered_df):
             intermediate_aggregated_data[AggregatedVitalInfo.AVG_HEART_RATE] //= (row_number % row_aggregation_count)
             intermediate_aggregated_data[AggregatedVitalInfo.AVG_RESPIRATION_RATE] //= (row_number % row_aggregation_count)
             final_aggregated_data.append(dict(intermediate_aggregated_data))
